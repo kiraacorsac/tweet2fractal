@@ -29,19 +29,19 @@ let script = (sk : p5) => {
             //const viz = new LSystemVisualizer(lsys.getIteration(message.display.iteration), angle, message.display.size);
             console.log(message);
             const viz = new LSystemVisualizer(lsys.getIteration(message.display.iteration), angle, message.display.size);
-            let c = sk.createGraphics(1200, 820);
-            sk.createCanvas(1200, 820);
+            let c = sk.createGraphics(window.innerWidth, window.innerHeight);
+            sk.createCanvas(window.innerWidth, window.innerHeight);
             // @ts-ignore-start
             viz.draw(c, message.display.offset);
             c.textAlign(sk.CENTER, sk.TOP);
             c.fill(sk.color(255));
             c.textSize(30);
-            c.text("@"+message.author + ": " + message.tweet + "\n (" + message.display.iteration + " iterations)" , 50, 650, 1150, 1200);
+            c.text("@"+message.author + ": " + message.tweet + "\n (" + message.display.iteration + " iterations)" , 0, window.innerHeight*0.8, window.innerWidth, 400);
             
             var test = c;
             //sk.saveCanvas(c, "latest", "png");
-            //sk.image(c, 0, 0, 1200, 820);
-            twitter.reply(reply, c.canvas.toDataURL('image/png').replace(/data:image\/png;base64,/, ''));
+            sk.image(c, 0, 0, window.innerWidth, window.innerHeight);
+            //twitter.reply(reply, c.canvas.toDataURL('image/png').replace(/data:image\/png;base64,/, ''));
             //@ts-ignore-end
 
             //"This project makes pretty pictures out of tweets."
