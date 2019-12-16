@@ -1,0 +1,18 @@
+private iterate(start : string) : string{
+    let nextIteration = "";
+    for(let letter of start){
+        nextIteration += letter in this.rulebook ? this.rulebook[letter] : letter;
+    }
+    return nextIteration;
+}
+
+for (var i = 0; i < this.iterate(tweet).length; i++) {
+    var current = this.iterate(tweet).charAt(i);
+    if (current == ".") {
+        p5.line(0, 0, 0, this.size);
+    } else if (current == "+") {
+        p5.rotate(this.angle);
+    } else if (current == "-") {
+        p5.rotate(-this.angle)
+    } else ...
+}

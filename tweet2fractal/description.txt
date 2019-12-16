@@ -1,0 +1,14 @@
+Filip Opálený
+@tweet2fractal
+
+Short description:
+I made a twitter bot that makes your tweets into fractals.
+
+Annotation:
+Tweets are short, but can pack a lot of meaning. Like a fractal. How would it look if we took the tweet as a recursive rulesystem that makes fractals out of them? Retweet a tweet you would like to see @tweet2fractal to view the fractal! Some can be interesting. Some are not. Like tweets.
+
+
+Controls:
+Retweet your favorite tweet with a @tweet2fractal mention. Latest retweeted tweet will be displayed on tweet2fractal.herokuapp.com and all of them you can find on twitter @tweet2fractal. 
+
+
