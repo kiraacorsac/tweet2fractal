@@ -40,9 +40,12 @@ let script = (sk : p5) => {
             
             var test = c;
             //sk.saveCanvas(c, "latest", "png");
-            //sk.image(c, 0, 0, 1200, 820);
+            sk.image(c, 0, 0, 1200, 820);
             twitter.reply(reply, c.canvas.toDataURL('image/png').replace(/data:image\/png;base64,/, ''));
             //@ts-ignore-end
+
+            //"This project makes pretty pictures out of tweets."
+            //"Retweet with comment @tweet2fractal to see it in action"
 
         }));
 
