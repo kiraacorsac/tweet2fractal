@@ -27,10 +27,11 @@ let script = (sk) => {
             sk.createCanvas(1200, 820);
             // @ts-ignore-start
             viz.draw(c, message.display.offset);
+            c.stroke(sk.color(0));
             c.textAlign(sk.CENTER, sk.TOP);
             c.fill(sk.color(255));
             c.textSize(30);
-            c.text("@" + message.author + ": " + message.tweet + "\n (" + message.display.iteration + " iterations)", 50, 650, 1150, 1200);
+            c.text("@" + message.name + ": " + message.tweet + "\n (" + message.display.iteration + " iterations)", 50, 650, 1150, 1200);
             var test = c;
             //sk.saveCanvas(c, "latest", "png");
             //sk.image(c, 0, 0, 1200, 820);
