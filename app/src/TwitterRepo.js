@@ -3,6 +3,8 @@ import Codebird from '../node_modules/codebird/codebird.js';
 export class RealTwitter {
     constructor() {
         this.client = new Codebird();
+        //I know I knooooow.... It's an art project, not everything has to be secure 
+        //plz no hax :'<
         this.client.setConsumerKey("pUpfcGX2XtZx72pNYRp7eD0vG", "BbLs6KRfKH4GLJUYUDMMwetQ1aYDPL7sbr19PGxcct4S6ypVtK");
         this.client.setToken("1205364812932366338-YOaUH16uc82VBpDLLnD6MZXgaZijSX", "LStrMbvzeCRAroIya1j00Yd3x8jd7bemlbr9p1VyfzFcR");
     }
@@ -45,6 +47,7 @@ export class RealTwitter {
     }
     getLatestDirectedMessage(cb) {
         this.client.__call("statuses_mentionsTimeline", data => {
+            console.log(data);
             let last = data[0];
             console.log(last.id, this.latestId);
             let notAgain = this.latestId;
