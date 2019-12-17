@@ -131,9 +131,9 @@ export class LSystemVisualizer{
 
         let t2 : Turtle;
         if (x < 1 || y < 1){
-          t2 = this.renderDrawing(p5, colors, p5.min(x, y));
-        } else {
           t2 = this.renderDrawing(p5, colors, p5.max(x, y));
+        } else {
+          t2 = this.renderDrawing(p5, colors, p5.min(x, y));
         }
         console.log(t2.telemetry(), (p5.height/2), (p5.width/2))
 

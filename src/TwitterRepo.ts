@@ -76,6 +76,7 @@ export class RealTwitter implements ITwitterRepository {
     }
     getLatestDirectedMessage(cb: any): void {
         this.client.__call("statuses_mentionsTimeline", data => {
+            console.log(data);
             let last = data[0];
             console.log(last.id, this.latestId);
             let notAgain = this.latestId;

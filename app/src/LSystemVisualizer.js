@@ -95,10 +95,10 @@ export class LSystemVisualizer {
         p5.background(32);
         let t2;
         if (x < 1 || y < 1) {
-            t2 = this.renderDrawing(p5, colors, p5.min(x, y));
+            t2 = this.renderDrawing(p5, colors, p5.max(x, y));
         }
         else {
-            t2 = this.renderDrawing(p5, colors, p5.max(x, y));
+            t2 = this.renderDrawing(p5, colors, p5.min(x, y));
         }
         console.log(t2.telemetry(), (p5.height / 2), (p5.width / 2));
         p5.resetMatrix();
