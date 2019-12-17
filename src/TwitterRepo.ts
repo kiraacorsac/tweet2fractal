@@ -90,6 +90,8 @@ export class RealTwitter implements ITwitterRepository {
     private client: any;
     constructor() {
         this.client = new Codebird();
+        //I know I knooooow.... It's an art project, not everything has to be secure 
+        //plz no hax :'<
         this.client.setConsumerKey("pUpfcGX2XtZx72pNYRp7eD0vG", "BbLs6KRfKH4GLJUYUDMMwetQ1aYDPL7sbr19PGxcct4S6ypVtK");
         this.client.setToken("1205364812932366338-YOaUH16uc82VBpDLLnD6MZXgaZijSX", "LStrMbvzeCRAroIya1j00Yd3x8jd7bemlbr9p1VyfzFcR");
 

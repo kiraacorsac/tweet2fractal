@@ -122,19 +122,27 @@ export class LSystemVisualizer{
 
         
         let turtle = this.renderDrawing(p5, colors, 1);
-
+        console.log(turtle.telemetry());
         let tel = turtle.telemetry();
-        let maxX = p5.max(tel.maxX, Math.abs(tel.minX));
-        let maxY = p5.max(tel.maxY,  Math.abs(tel.minY));
-
+        let x = (p5.width/2) / p5.max(tel.maxX, Math.abs(tel.minX));
+        let y = (p5.height/2) / p5.max(tel.maxY,  Math.abs(tel.minY));
+        
         p5.background(32);
-        this.renderDrawing(p5, colors, maxX > maxY ? (p5.height/2)/maxX : (p5.width/2)/maxY);
+
+        let t2 : Turtle;
+        if (x < 1 || y < 1){
+          t2 = this.renderDrawing(p5, colors, p5.min(x, y));
+        } else {
+          t2 = this.renderDrawing(p5, colors, p5.max(x, y));
+        }
+        console.log(t2.telemetry(), (p5.height/2), (p5.width/2))
 
         p5.resetMatrix();
         return
       }
 
   private renderDrawing(p5: p5, colors: p5.Color[], multiplyer : number) {
+    console.log(multiplyer);
     p5.resetMatrix();
     p5.translate(p5.width/2, p5.height/2 );
     let currentStroke = p5.color("#8E6B88");
